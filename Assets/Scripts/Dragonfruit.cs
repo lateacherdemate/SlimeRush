@@ -11,7 +11,7 @@ public class Dragonfruit : MonoBehaviour
 
             if (playerState != null)
             {
-                playerState.Eat();
+                playerState.EatAnimation();
                 Destroy(gameObject);
             }
         }

@@ -11,8 +11,8 @@ public class Mango : MonoBehaviour
 
             if (playerState != null)
             {
-                playerState.Eat();
-                playerState.mangoEaten = true;
+                playerState.EatMango();
+                playerState.EatAnimation();
                 Destroy(gameObject);
             }
         }
