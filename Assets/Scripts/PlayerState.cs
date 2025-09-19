@@ -15,7 +15,6 @@ public class PlayerState : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         playerMovement = GetComponent<PlayerMovement>();
-        ui = GetComponent<UI>();
     }
 
     //Animacion de comer
@@ -26,18 +25,13 @@ public class PlayerState : MonoBehaviour
             isEating = true;
             Debug.Log("Eat activado");
 
-            if (collision.gameObject.CompareTag("Mango"))
-            {
+            
                 playerMovement.moveSpeed *= 1.8f;
                 if(playerMovement.jumpForce < 20)
                 {
                playerMovement.jumpForce += 3.5f;
                 }
-            }else if (collision.gameObject.CompareTag("Dragonfruit"))
-            {
-                
-            }
-
+            
 
 
             if (animator != null)
