@@ -46,12 +46,11 @@ public class PlayerState : MonoBehaviour
     private System.Collections.IEnumerator StopEatAnimation()
     {
         
-        yield return new WaitForSeconds(0.5f); 
+        yield return new WaitForSeconds(0.3f); 
 
         if (animator != null)
         {
             animator.ResetTrigger("Eat");
-            animator.Play("Eat", 0, 1f); 
         }
 
         isEating = false;
