@@ -9,6 +9,7 @@ public class PlayerState : MonoBehaviour
 
     private bool isDead = false;
     private bool isEating = false;
+    public bool mangoEaten = false;
 
     void Start()
     {
@@ -17,23 +18,29 @@ public class PlayerState : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
     }
 
-    //Animacion de comer
     public void Eat()
     {
         if (!isEating)
         {
+            if(!mangoEaten)
+            {
+                
+            }
             isEating = true;
-            Debug.Log("Eat activado");
+            Debug.Log("Eat activated");
 
+            if (!mangoEaten)
+            {
+              playerMovement.moveSpeed *= 1.8f;
             
-                playerMovement.moveSpeed *= 1.8f;
-                if(playerMovement.jumpForce < 20)
-                {
-               playerMovement.jumpForce += 3.5f;
-                }
+              if(playerMovement.jumpForce < 20)
+              {
+              playerMovement.jumpForce += 3.5f;
+              }
+
+            }
             
-
-
+            
             if (animator != null)
             {
                 animator.SetTrigger("Eat");
@@ -51,7 +58,7 @@ public class PlayerState : MonoBehaviour
     }
 
 
-    // Animacion de muerte
+  
     public void Die()
     {
         if (!isDead)
