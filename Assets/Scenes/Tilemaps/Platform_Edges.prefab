@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 1292850099455296332}
   - component: {fileID: 3519838049567032048}
   m_Layer: 0
-  m_Name: Plataformas_2
+  m_Name: Platform_Edges
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
