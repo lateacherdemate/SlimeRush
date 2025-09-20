@@ -4,19 +4,17 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     [SerializeField] private InputActionReference moveAction;
     private Vector2 moveInput;
 
     [SerializeField] private InputActionReference jumpAction;
-    private bool jumpInput;
 
-    [SerializeField] private InputActionReference sprintAction;
-    //private bool sprintInput;
+    [SerializeField] private InputActionReference sneakAction;
 
     [SerializeField] private LayerMask groundLayer;
 
     public float moveSpeed = 7f;
+    public float sneakMultiplier = 0.5f;
     public float jumpForce = 7f;
 
     RaycastHit2D hittingFloor;
@@ -25,11 +23,18 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     public bool isGrounded = false;
 
-    //private float originalSpeed;
+    private bool sneaking = false;
 
-    void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void OnEnable()
+    {
+        moveAction.action.Enable();
+        jumpAction.action.Enable();
+        sneakAction.action.Enable();
 
         moveAction.action.started += HandleMoveInput;
         moveAction.action.performed += HandleMoveInput;
@@ -37,51 +42,61 @@ public class PlayerMovement : MonoBehaviour
 
         jumpAction.action.performed += HandleJumpInput;
 
-        //sprintAction.action.performed += HandleSprintInput;
+        sneakAction.action.started += HandleSneakStarted;
+        sneakAction.action.canceled += HandleSneakCanceled;
+    }
+
+    private void OnDisable()
+    {
+        moveAction.action.started -= HandleMoveInput;
+        moveAction.action.performed -= HandleMoveInput;
+        moveAction.action.canceled -= HandleMoveInput;
+
+        jumpAction.action.performed -= HandleJumpInput;
+
+        sneakAction.action.started -= HandleSneakStarted;
+        sneakAction.action.canceled -= HandleSneakCanceled;
+
+        moveAction.action.Disable();
+        jumpAction.action.Disable();
+        sneakAction.action.Disable();
     }
 
     void HandleMoveInput(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
-        Debug.Log(moveInput);
     }
 
     void HandleJumpInput(InputAction.CallbackContext context)
     {
-        if (isGrounded == true && rb != null)
+        if (isGrounded && rb != null)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
 
-   /* void HandleSprintInput(InputAction.CallbackContext context)
+    private void HandleSneakStarted(InputAction.CallbackContext context)
     {
-        StartCoroutine(SprintReverso());
+        sneaking = true;
     }
 
-    private IEnumerator SprintReverso()
+    private void HandleSneakCanceled(InputAction.CallbackContext context)
     {
-        moveSpeed = originalSpeed * 0.5f;
-        Debug.Log("Sprint activated");
-        yield return new WaitForSeconds(2f);
-        moveSpeed = originalSpeed;
-        Debug.Log("Sprint ended");
+        sneaking = false;
     }
-   */
-        void Update()
+
+    void Update()
     {
-        rb.linearVelocity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocity.y);
         hittingFloor = Physics2D.Raycast(transform.position, Vector2.down, rayLength, groundLayer);
-
-        if (hittingFloor.collider != null)
-        {
-            isGrounded = true;
-        }
-        else
-        {
-            isGrounded = false;
-            
-        }
-
+        isGrounded = hittingFloor.collider != null;
     }
+
+    private void FixedUpdate()
+    {
+        float currentSpeed = moveSpeed;
+        if (sneaking) currentSpeed *= sneakMultiplier;
+
+        rb.linearVelocity = new Vector2(moveInput.x * currentSpeed, rb.linearVelocity.y);
+    }
+
 }
