@@ -94,9 +94,22 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         float currentSpeed = moveSpeed;
-        if (sneaking) currentSpeed *= sneakMultiplier;
+
+        if (sneaking)
+        {
+            currentSpeed *= sneakMultiplier;
+        }
 
         rb.linearVelocity = new Vector2(moveInput.x * currentSpeed, rb.linearVelocity.y);
+
+        if (moveInput.x > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else if (moveInput.x < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
     }
 
 }
