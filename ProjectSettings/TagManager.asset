@@ -8,6 +8,7 @@ TagManager:
   - Spikes
   - Mango
   - Dragonfruit
+  - Bullet
   layers:
   - Default
   - TransparentFX
