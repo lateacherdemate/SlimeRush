@@ -47,7 +47,7 @@ public class PlayerState : MonoBehaviour
     private System.Collections.IEnumerator StopEatAnimation()
     {
         
-        yield return new WaitForSeconds(0.3f); 
+        yield return new WaitForSeconds(0.2f); 
 
         if (animator != null)
         {
@@ -74,7 +74,7 @@ public class PlayerState : MonoBehaviour
 
     private System.Collections.IEnumerator StopShootingAnimation()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.15f);
 
         if (animator != null)
         {
