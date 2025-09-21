@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool sneaking = false;
 
-    [SerializeField] private int NumberOfbullets = 0;
+    [SerializeField] public int NumberOfbullets = 0;
     public GameObject bullet;
 
     private PlayerState playerState;
@@ -94,9 +94,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (NumberOfbullets > 0 && bullet != null)
         {
-          
             NumberOfbullets--;
             GameObject newBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+            float direction = transform.localScale.x;
+            Bullets bulletScript = newBullet.GetComponent<Bullets>();
+            if (bulletScript != null)
+            {
+                bulletScript.SetDirection(direction);
+            }
             playerState.Shoot();
 
         }
