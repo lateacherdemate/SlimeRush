@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 414137330393057093}
   - component: {fileID: 734188328510012560}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mango light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 4150470779358828193}
   - component: {fileID: 5022717804592102359}
   - component: {fileID: 2823482469420677954}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mango
   m_TagString: Mango
   m_Icon: {fileID: 0}
@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54f4b830e1b446f4aa639cfdb80505c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ui: {fileID: 0}
 --- !u!95 &2823482469420677954
 Animator:
   serializedVersion: 7

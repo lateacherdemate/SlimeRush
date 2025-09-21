@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1943267126674567060}
   - component: {fileID: 5424784430703835983}
   - component: {fileID: 792923162914604177}
-  - component: {fileID: 7609541406474341952}
-  m_Layer: 0
+  - component: {fileID: 745892060963791279}
+  m_Layer: 8
   m_Name: Dragonfruit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.07213813, y: 0}
   m_Size: {x: 1.1357237, y: 1.28}
   m_Direction: 0
---- !u!114 &7609541406474341952
+--- !u!114 &745892060963791279
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,9 +159,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7615463840556839463}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43cf41963b22b1e42a801a78ef23ebc3, type: 3}
+  m_Script: {fileID: 11500000, guid: 370363430c5d8ee499990d5da3031d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dragonfruits: 0
 --- !u!1 &7878908398078983703
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2229141631569682176}
   - component: {fileID: 1023321584326111256}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}

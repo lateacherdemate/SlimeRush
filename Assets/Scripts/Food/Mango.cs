@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Mango : MonoBehaviour
 {
+    public UI ui;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -12,8 +13,10 @@ public class Mango : MonoBehaviour
             if (playerState != null)
             {
                 playerState.EatMango();
+                
                 playerState.EatAnimation();
                 Destroy(gameObject);
+                ui.mangos++;
             }
         }
     }

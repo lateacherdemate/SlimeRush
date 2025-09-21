@@ -1,16 +1,19 @@
 using UnityEngine;
+using TMPro;
 
 public class UI : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public TMP_Text Mango_Text;
+    public TMP_Text Dragonfruit_Text;
 
-    // Update is called once per frame
+    public int mangos = 0;
+    public int dragonfruits = 0;
+
     void Update()
     {
-        
+       Mango_Text.text = "X" + mangos;
+       Dragonfruit_Text.text = "X" + dragonfruits;
+       
     }
 }
+

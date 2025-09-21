@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Dragonfruit : MonoBehaviour
 {
+    public UI ui;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -12,6 +13,7 @@ public class Dragonfruit : MonoBehaviour
             if (playerState != null)
             {
                 playerState.EatAnimation();
+                ui.dragonfruits++;
                 Destroy(gameObject);
             }
         }
