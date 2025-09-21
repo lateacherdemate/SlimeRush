@@ -13,6 +13,10 @@ PrefabInstance:
       value: Bullets Variant
       objectReference: {fileID: 0}
     - target: {fileID: 567210578367631977, guid: a6a4fde9429fff5429098800a3853874, type: 3}
+      propertyPath: m_TagString
+      value: Bullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 567210578367631977, guid: a6a4fde9429fff5429098800a3853874, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
