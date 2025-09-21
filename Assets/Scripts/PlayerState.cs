@@ -9,6 +9,7 @@ public class PlayerState : MonoBehaviour
 
     private bool isDead = false;
     private bool isEating = false;
+    private bool isShooting = false;
 
     void Start()
     {
@@ -56,7 +57,33 @@ public class PlayerState : MonoBehaviour
         isEating = false;
     }
 
+    public void Shoot()
+    {
+        if (!isShooting)
+        {
+            isShooting = true;
 
+            if (animator != null)
+            {
+                animator.SetTrigger("Shoot");
+            }
+
+            StartCoroutine(StopShootingAnimation());
+        }
+    }
+
+    private System.Collections.IEnumerator StopShootingAnimation()
+    {
+        yield return new WaitForSeconds(0.3f);
+
+        if (animator != null)
+        {
+            animator.ResetTrigger("Shoot");
+        }
+
+        isShooting = false;
+
+    }
 
     public void Die()
     {

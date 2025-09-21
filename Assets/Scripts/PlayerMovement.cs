@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private InputActionReference sneakAction;
 
+    [SerializeField] private InputActionReference shootAction;
+
     [SerializeField] private LayerMask groundLayer;
 
     public float moveSpeed = 7f;
@@ -25,9 +27,16 @@ public class PlayerMovement : MonoBehaviour
 
     private bool sneaking = false;
 
+    [SerializeField] private int NumberOfbullets = 0;
+    public GameObject bullet;
+
+    private PlayerState playerState;
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerState = GetComponent<PlayerState>();
     }
 
     private void OnEnable()
@@ -35,12 +44,15 @@ public class PlayerMovement : MonoBehaviour
         moveAction.action.Enable();
         jumpAction.action.Enable();
         sneakAction.action.Enable();
+        shootAction.action.Enable();
 
         moveAction.action.started += HandleMoveInput;
         moveAction.action.performed += HandleMoveInput;
         moveAction.action.canceled += HandleMoveInput;
 
         jumpAction.action.performed += HandleJumpInput;
+
+        shootAction.action.performed += HandleShootInput;
 
         sneakAction.action.started += HandleSneakStarted;
         sneakAction.action.canceled += HandleSneakCanceled;
@@ -54,12 +66,15 @@ public class PlayerMovement : MonoBehaviour
 
         jumpAction.action.performed -= HandleJumpInput;
 
+        shootAction.action.performed -= HandleShootInput;
+
         sneakAction.action.started -= HandleSneakStarted;
         sneakAction.action.canceled -= HandleSneakCanceled;
 
         moveAction.action.Disable();
         jumpAction.action.Disable();
         sneakAction.action.Disable();
+        shootAction.action.Disable();
     }
 
     void HandleMoveInput(InputAction.CallbackContext context)
@@ -72,6 +87,18 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded && rb != null)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+    }
+
+    void HandleShootInput(InputAction.CallbackContext context)
+    {
+        if (NumberOfbullets > 0 && bullet != null)
+        {
+          
+            NumberOfbullets--;
+            GameObject newBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+            playerState.Shoot();
+
         }
     }
 
