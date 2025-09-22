@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3776319922675098435}
   - component: {fileID: 4680871922467418636}
   - component: {fileID: 7219166145892469537}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Static_Bullets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,8 +78,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 749693943
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 874343242196921964, guid: 7fd52e8b3ac5bf04686c8e505731c167, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -199,7 +199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9438190447262351}
   - component: {fileID: 6933319767040759148}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bullet_Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ Transform:
   m_GameObject: {fileID: 5511024086602767383}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.03, y: -0.08, z: 9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Intensity: 10
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000f76baf2c59258172272672d725331f6fb71669a4c9b58c21
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
