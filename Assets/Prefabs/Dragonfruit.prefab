@@ -77,8 +77,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 562869705
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 1525679447, guid: a0f87ed99a9e46841bb64ea6dcfdf9b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 370363430c5d8ee499990d5da3031d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dragonfruits: 0
+  ui: {fileID: 0}
 --- !u!1 &7878908398078983703
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Intensity: 3
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 000000005fe647e31f76cd05995bee9bf76baf2c899f652e25331f6fb71669a4c9b58c21272672d75fc1f21f75d5d3c259258172
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0

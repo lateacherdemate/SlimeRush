@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool sneaking = false;
 
-    [SerializeField] public int NumberOfbullets = 0;
+    public int NumberOfbullets = 0;
     public GameObject bullet;
 
     private PlayerState playerState;
