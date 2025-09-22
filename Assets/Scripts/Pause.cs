@@ -11,8 +11,6 @@ public class Pause : MonoBehaviour
 
     void Start()
     {
-        
-        if(pausePanel==null)Debug.Log("Pause script started.");
         pausePanel.SetActive(false);
     }
 
