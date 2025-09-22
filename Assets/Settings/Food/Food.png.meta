@@ -124,7 +124,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Comiditas_0
+      name: Mango_0
       rect:
         serializedVersion: 2
         x: 0
@@ -146,7 +146,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Comiditas_1
+      name: Mango_1
       rect:
         serializedVersion: 2
         x: 128
@@ -168,7 +168,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Comiditas_2
+      name: Mango_2
       rect:
         serializedVersion: 2
         x: 256
@@ -190,7 +190,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Comiditas_3
+      name: Mango_3
       rect:
         serializedVersion: 2
         x: 0
@@ -212,7 +212,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Comiditas_4
+      name: Mango_4
       rect:
         serializedVersion: 2
         x: 128
@@ -234,7 +234,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Comiditas_5
+      name: Mango_5
       rect:
         serializedVersion: 2
         x: 256
@@ -256,7 +256,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Comiditas_6
+      name: Dragon_6
       rect:
         serializedVersion: 2
         x: 0
@@ -278,7 +278,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Comiditas_7
+      name: Dragon_7
       rect:
         serializedVersion: 2
         x: 128
@@ -300,7 +300,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Comiditas_8
+      name: Dragon_8
       rect:
         serializedVersion: 2
         x: 256
@@ -335,15 +335,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Comiditas_0: 410951809
-      Comiditas_1: -114169219
-      Comiditas_2: 2053136666
-      Comiditas_3: 495491402
-      Comiditas_4: -988163990
-      Comiditas_5: -23840222
-      Comiditas_6: 1525679447
-      Comiditas_7: -1724861154
-      Comiditas_8: 1285769484
+      Dragon_6: 1525679447
+      Dragon_7: -1724861154
+      Dragon_8: 1285769484
+      Mango_0: 410951809
+      Mango_1: -114169219
+      Mango_2: 2053136666
+      Mango_3: 495491402
+      Mango_4: -988163990
+      Mango_5: -23840222
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
