@@ -5,6 +5,7 @@ public class PlayerState : MonoBehaviour
 {
     private Animator animator;
     private PlayerMovement playerMovement;
+    public UI ui;
     private Rigidbody2D rb;
 
     private bool isDead = false;
@@ -16,6 +17,7 @@ public class PlayerState : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         playerMovement = GetComponent<PlayerMovement>();
+  
     }
 
     public void EatMango()
@@ -110,6 +112,7 @@ public class PlayerState : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        UI.deaths += 1;
     }
 
 }
